@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "consul": "^0.34.1",
+    "express": "~4.15.5",
+    "rest": "^2.0.0",
+    "yargs": "^13.2.4",
+    "zipkin": "^0.18.4",
+    "zipkin-context-cls": "^0.18.4",
+    "zipkin-instrumentation-cujojs-rest": "^0.18.4",
+    "zipkin-instrumentation-fetch": "^0.18.4",
+    "zipkin-transport-http": "^0.18.4",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0"
+  }
+}

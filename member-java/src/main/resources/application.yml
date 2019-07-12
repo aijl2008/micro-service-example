@@ -1,0 +1,41 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: member-java
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQLDialect
+  #    hibernate:
+#      ddl-auto: validate
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${host}:${port}/${database}?useUnicode=true&characterEncoding=utf-8
+    username: ${username}
+    password: ${password}
+  zipkin:
+    base-url: http://zipkin:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+logging:
+  level:
+    root: INFO
+    org:
+      springframework.web: DEBUG
+      hibernate: INFO
+      hibernate.type.descriptor.sql.BasicBinder: TRACE
+      hibernate.type.descriptor.sql.BasicExtractor: TRACE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
+debug: true
+feign:
+  hystrix:
+    enabled: true

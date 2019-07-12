@@ -1,0 +1,37 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: shop-java
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${host}:${port}/${database}?useUnicode=true&characterEncoding=utf-8
+    username: ${username}
+    password: ${password}
+  zipkin:
+    base-url: http://zipkin:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
+logging:                                # 配置日志级别，让hibernate打印出执行的SQL
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
+debug: true
+feign:
+  hystrix:
+    enabled: true

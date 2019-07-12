@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.itmuch.cloud</groupId>
+<artifactId>microservice-parent</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<packaging>pom</packaging>
+
+
+<modules>
+    <module>eureka</module>
+    <module>zipkin</module>
+    <module>hystrix-dashboard</module>
+    <module>config</module>
+    <module>member-java</module>
+    <module>shop-java</module>
+    <module>shop-sidecar</module>
+    <module>demo-java</module>
+    <module>demo-zipkin-a</module>
+    <module>demo-zipkin-b</module>
+    <module>demo-zipkin-c</module>
+</modules>
+</project>

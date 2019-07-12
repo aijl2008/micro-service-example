@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://192.168.64.104:8004/micro-service/example-config-repo.git      # 配置Git仓库的地址
+          username:                                                         # Git仓库的账号
+          password:                                                         # Git仓库的密码
+    bus:
+      trace:
+        enabled: true     # 开启cloud bus的跟踪
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+#    username: guest
+#    password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
